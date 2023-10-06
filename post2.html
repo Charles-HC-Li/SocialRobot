@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Explore our project - Social Robot for the Depressed and Lonely: Based on Emotional Analyzing and LLM" />
+    <meta name="author" content="C Li" />
+    <title>Social Robot's Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Social Robot's Robot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/robot-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Social Robot for the Depressed and Lonely</h1>
+                        <h2 class="subheading">Utilizing Emotional Analysis and LLM Technology</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">C, Li</a>
+                            on October 6, 2023
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Blog Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2>Introduction</h2>
+                    <p>
+                        In our quest to enhance human-machine interactions and address mental health concerns, we embark on the creation of a revolutionary social robot. This robot will harness the power of multi-modal emotional analysis and advanced Language Model Machines (LLMs) to provide users with personalized conversations and activities, with the ultimate goal of alleviating depression and promoting well-being.
+                    </p>
+                
+                    <p>
+                        As we delve into the intricacies of our project, it's important to note that the choice of modalities for data input may evolve over time based on project progress and user feedback.
+                    </p>
+                
+                    <h2>Approaches</h2>
+                    <p>
+                        As previously explained in Approaches, the implementation of the system is largely divided into two parts. Charles Li will oversee the Emotional analyzing component, while Taehyeon Kim will be in charge of the Interaction using LLMs segment. This approach allows us to work on these two critical aspects in parallel, leading to efficient development and integration.
+                    </p>
+                
+                    <p>
+                        Our proposed social robot employs a multi-modal approach to analyze users' emotions, including voice tone, facial expressions, and text messages. It then generates output that is passed on to Language Model Machines (LLMs) to craft conversations and activity proposals tailored to the user's specific mental state. This process equips the social robot to detect and alleviate user depression.
+                    </p>
+                
+                    <img class="img-fluid" src="img/post2/process.jpg" alt="Figure 1: The Proposed Social Robot System Structure">
+                    
+                    <small>Figure 1: The Proposed Social Robot System Structure</samll>
+                    <p></p>
+                
+                    <h3>3.1 Emotional Analyzing</h3>
+                    <p>
+                        Emotional analysis can be categorized into two main approaches: classification and regression. Classification categorizes emotions into distinct classes, such as positive, negative, and neutral, while regression quantitatively maps emotions onto a two-dimensional coordinate system (Valence and Arousal) to capture nuances more precisely. These modalities may evolve as our project progresses.
+                    </p>
+                
+                    <img class="img-fluid" src="https://www.researchgate.net/profile/Elisabeth-Andre/publication/23456155/figure/fig1/AS:310248230408192@1450980350189/Emotion-models-a-Two-dimensional-model-by-valence-and-arousal-b-Three-dimensional.png" alt="Figure 2: Emotional Analysis by VA Emotional Model"><br>
+                
+                    <samll>Figure 2: Emotional Analysis by VA Emotional Model</samll>
+                
+                    <p>
+                        In a scientific context, multi-modal emotion analysis offers clear advantages over single-modal approaches. Text, audio, and images each provide unique insights into emotional states, with audio focusing on tone and frequency, text employing transformer-based models for sentiment analysis, and image analysis relying on facial expression and posture recognition.
+                    </p>
+                
+                    <p>
+                        In summary, adopting multi-modal analysis is essential for a comprehensive understanding of emotions, with each modality (audio, text, and images) offering unique insights into emotional states.
+                    </p>
+                
+                
+                    <h3>3.2 Interaction Using LLMs</h3>
+                    <p>
+                        LLMs, like ChatGPT, can present challenges in specific systems due to the variability of their output. To obtain a stable and fixed form of output, prompt engineering is used. The prompt engineering structure consists of Role, Main Task, and Instruction, as shown in Figure 3. Role assigns a specific function to the LLMs, Main Task defines the primary objective, and Instruction contains other relevant information, including expected output examples.
+                    </p>
+                    
+                    <img class="img-fluid" src="img/post2/llm.jpg" alt="Figure 3: Prompt Engineering Structure for the Proposed Social Robot System">
+                
+                    <small>Figure 3: Prompt Engineering Structure for the Proposed Social Robot System</small>
+
+                    <p>
+                        The ultimate goal of Interaction using LLMs is to have them generate conversations and activity proposals. Additionally, LLMs are trained to distinguish between these outputs. Conversations are exported in the form of voice messages through a Text-to-Speech (TTS) API, while action proposals are made immediately available to the user using the appropriate API based on the type of proposal.
+                    </p>
+                
+                    <h2>Conclusion</h2>
+                    <p>
+                        In conclusion, our project represents a significant leap forward in the field of human-machine interaction, especially in the context of mental health support. By combining multi-modal emotional analysis with the capabilities of Language Model Machines, we aim to create a social robot that can genuinely comprehend and cater to the emotional needs of its users. With Charles Li and Taehyeon Kim at the helm of the implementation efforts, we are confident in the successful development and testing of our innovative system. This endeavor holds the promise of providing valuable assistance and companionship to individuals grappling with depression, fostering a brighter future for mental health support through technology.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
