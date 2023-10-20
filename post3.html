@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Explore our project - Social Robot for the Depressed and Lonely: Based on Emotional Analyzing and LLM" />
+    <meta name="author" content="C Li" />
+    <title>Social Robot's Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Social Robot's Robot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/robot-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Social Robot for the Depressed and Lonely</h1>
+                        <h2 class="subheading">Utilizing Emotional Analysis and LLM Technology</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">C, Li</a>
+                            on October 20, 2023
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Blog Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <h2>Dataset</h2>
+                    <p>Finding multimodal data sets specifically provided by groups such as lonely people is complex, and because of the ethical implications, researchers should reduce or avoid such data collection to protect these populations.</p>
+                    <p>Fortunately, emotion is an inherent and interoperable expression of human beings. This channel goes beyond language and action, and is widely present and similar in all kinds of groups. Therefore, multimodal data sets of ordinary people are equally effective for emotion analysis.</p>
+                    <p>In the end, we found two datasets, one of which is <a href="https://dl.acm.org/doi/abs/10.1145/3343031.3350550">AVEC</a> dataset on patients with depression, which is more suitable for our topic, but currently our team has submitted the application and has not obtained the dataset. If it is not available, we will use the <a href="https://arxiv.org/abs/1606.06259">MOSI</a> dataset provided by CMU, which is a multimodal dataset consisting of videos of normal people.</p>
+                    <h2>Encoder Structure</h2>
+                    
+                    
+                    
+                    <img class="img-fluid" src="img\post3\3.jpg">
+                    <p>For the Encoder structure, for text input we will use BERT alone to extract features, <img class="img-fluid" src="img\post3\4.jpg">for audio we will use LSTM architecture, <img class="img-fluid" src="https://user-images.githubusercontent.com/35737777/69682136-5bdd4780-10a8-11ea-9079-50283f5451df.png">and for visual factors we will temporarily use VGG16 of CNN architecture to extract features.</p>
+                    <img class="img-fluid" src="img\post3\5.jpg">
+                    <p> But these contents are temporary at present, we will give the definite results of operation in the next blog, because we will consider the effect of comparing the current updated model such as ViT, consider the replacement of architecture, and even consider the fusion of features to choose <a href="https://github.com/yaohungt/Multimodal-Transformer">MulT</a> or <a href="https://aclanthology.org/2023.acl-long.421/">Contrastive Learning</a> and Attention mechanisms. This is also why in the past two weeks, we have only selected encoders in addition to data sets rather than directly analyzed the results.</p>
+<h2>Generating Pythonic Code</h2>
+<p>In general, ChatGPT generates output in the form of a message for input by a user in the following format.</p>
+<img class="img-fluid" src="img\post3\1.jpg" alt="Figure 1: Example">
+<p>In order to obtain a more precisely fixed type of output desired, it is necessary for ChatGPT to generate the output in the form of ‘Pythonic Code’ rather than the above message form. First, make the output always in the form of pythonic code, and then gradually revise the desired form of code through Prompt Engineering. The result of generating the same content as the above message in the form of pythonic code is as follows.</p>
+<img class="img-fluid" src="img\post3\2.jpg" alt="Figure 1: New">
+<p>Now, we need to set the code structure optimized for the desired operation of Social Robot and then make ChatGPT generates an output with a predetermined code structure through prompt engineering.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
