@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Explore our project - Social Robot for the Depressed and Lonely: Based on Emotional Analyzing and LLM" />
+    <meta name="author" content="C Li" />
+    <title>Social Robot's Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Social Robot's Robot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/robot-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Social Robot for the Depressed and Lonely</h1>
+                        <h2 class="subheading">Utilizing Emotional Analysis and LLM Technology</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">C, Li</a>
+                            on November 3, 2023
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Blog Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                    <h2>Text Emotion Classification with BERT</h2>
+                    <p>In our multimodal emotion detection project, text emotion classification plays a crucial role. In this task, we employ the power of BERT (Bidirectional Encoder Representations from Transformers) to classify emotions in text data. BERT is a formidable natural language processing (NLP) model known for its remarkable performance and versatility.</p>
+                    
+                    <h2>Introduction to the BERT Model</h2>
+                    <img class="img-fluid" src="img\post4\1.jpg">
+                    <p>BERT, based on the Transformer architecture, stands out due to its bidirectional encoding, allowing it to consider both left and right context of words simultaneously. In our project, we employed a V100 GPU and fine-tuned the BERT model for five epochs to perform emotion classification on textual data.</p>
+                    
+                    <h2>Experimental Results</h2>
+                    <p>On our test data, we achieved inspiring results as follows:</p>
+                    <img class="img-fluid" src="img\post4\2.jpg">
+                    
+                    <p>Precision, recall, and F1-score classification report:</p>
+                    <img class="img-fluid" src="img\post4\3.jpg">
+                    <p>Testing accuracy: 0.9213</p>
+                    
+                    <h2>Analysis</h2>
+                    <p>These results highlight BERT's excellent performance in text emotion classification. For most emotionally strong sentences, the great effect of BERT is obvious. However, emotion classification is not without its challenges.</p>
+                    <img class="img-fluid" src="img\post4\4.jpg">
+                    <p>For instance, certain sentences, such as "The spring is over," may require additional context or individual differences to accurately classify emotions. Depending on a person's preference for seasons, this sentence might evoke either happiness or sadness. This underscores the impact of context and individual factors on text-based emotion classification.</p>
+                    
+                    <p>To better understand and capture emotions, we plan to expand our multimodal emotion detection project to include audio tone and facial expression data. By combining text, audio tone, and facial expression information, we aim to enhance emotion recognition accuracy. If successful, we will proceed to the integration phase, combining multimodal data. However, if challenges arise, we will explore methods such as hybrid learning to improve the accuracy and comprehensiveness of emotion analysis.</p>
+                    
+                    <p>This project represents our commitment to the fields of NLP and emotion analysis. We will continue to work diligently to improve our methods and technologies for a better understanding and recognition of emotions.</p>
+                    
+                    <h2>API organization based on the proposed activity</h2>
+                    <img class="img-fluid" src="img\post4\5.jpg">
+                    <p>After receiving the user's emotional analysis result, ChatGPT generates an activity proposal and an appropriate dialogue according to the user's emotional state.</p>
+                    <p>ChatGPT's direct conversation with the user is converted into a voice message through the pyttsx3 API. And the activity proposal is executed as a webdriver API if it is possible through an Internet browser, and as a subprocess API if it is an application that can be executed directly on Window OS.</p>
+                    <p>By functioning these APIs and learning how to use them with prompt engineering in ChatGPT, ChatGPT can generate python codes that output appropriate conversations as TTS and propose activities to the user according to the user's emotional state.</p>
+                    
+                    <p>Below is an example of the use of pyttsx3, webdriver, and subprocess:</p>
+                    <img class="img-fluid" src="img\post4\6.jpg">
+                    
+                    <p><img class="img-fluid" src="img\post4\7.jpg"></p>
+                    
+                    <img class="img-fluid" src="img\post4\8.jpg">
+                    
+                    <p>After the implementation of this part is completed, we will learn ChatGPT to generate the GUI using tkinter API to make it easier for users to choose the activities proposed by ChatGPT.</p>
+                    
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
