@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Explore our project - Social Robot for the Depressed and Lonely: Based on Emotional Analyzing and LLM" />
+    <meta name="author" content="C Li" />
+    <title>Social Robot's Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Social Robot's Robot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/robot-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Social Robot for the Depressed and Lonely</h1>
+                        <h2 class="subheading">Utilizing Emotional Analysis and LLM Technology</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">C, Li</a>
+                            on November 17, 2023
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Blog Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    
+                    <p>
+                        In this blog post, we will share our experience using the VGG16 model in facial emotion recognition tasks and
+                        explore prompt engineering.
+                    </p>
+                    <h2>VGG1: What AND Why?</h2>
+    <p>
+        VGG16, proposed by Karen Simonyan and Andrew Zisserman in 2014, is a classic Convolutional Neural Network (CNN).
+        Known for its simple yet deep design, this model is particularly suitable for image classification tasks. It
+        consists of 13 convolutional layers and 3 fully connected layers, enhancing the effectiveness of image feature
+        extraction by using small convolutional kernels and a deep structure.
+    </p>
+    <img class="img-fluid" src="https://user-images.githubusercontent.com/35737777/69682136-5bdd4780-10a8-11ea-9079-50283f5451df.png">
+    <p>
+        In facial emotion recognition tasks, we emphasize the lightweight nature of the model to ensure efficient
+        operation in resource-constrained environments. The relative simplicity of VGG16 makes it an ideal choice,
+        requiring less computational resources and achieving remarkable success in the field of image processing due to
+        its widespread application.
+    </p>
+    <h2>DataSet: FER2013</h2>
+    <img class="img-fluid" src="img/post5/2.png" alt="Image Description">
+    <p>
+        We selected the FER2013 dataset for our model, consisting of 35,886 facial expression images. The dataset
+        includes 28,708 training images, 3,589 public test images, and 3,589 private test images. Each image is a
+        grayscale image with a fixed size of 48×48 pixels, representing one of seven emotions (0-6).
+    </p>
+    <h2>Results and Analysis</h2>
+    <p>
+        We achieved satisfactory results through training and testing on a large facial emotion dataset. The overall
+        accuracy reached 0.85, indicating significant success in facial emotion recognition tasks.
+    </p>
+    <p>However, for specific categories, we noticed that the model's performance was relatively low. Specifically, our model performs well on the "happy" category, but poorly on the "normal" and "sad" categories. We think one of the reasons for this is that there is less data in these two categories, but more interestingly, we found that some of the images are difficult to judge even for humans. We think this phenomenon may stem in part from the difficulty of the images themselves in both categories. For example, the human expression in some images is difficult to identify as sad or normal, and the normal expression often shows no emotion, which is often mistaken for sad. This subjectivity and subjective difference may be one of the reasons for the low performance of the model.</p>
+    <h2>Tip on Prompt Engineering</h2>
+    <p>
+        We will introduce tips on Prompt Engineering when learning ChatGPT.
+First, learning of ChatGPT based on Prompt Engineering executed with follow processes.
+    </p>
+    <img class="img-fluid" src="img/post5/3.jpg" alt="Image Description">
+    <p>There are some cases when process 3 is not done properly. In this case, generally, modify again and again the prompt delivered to ChatGPT in process 1 through try and error, and repeat this process until the desired type of answer is generated.</p>
+    <p>However, there are ways to shorten this process for time efficiency. The point is to ask ChatGPT once again about how to modify the prompt.</p>
+    <p>This process is as follows:</p>
+    <img class="img-fluid" src="img/post5/4.jpg" alt="Image Description">
+    <p>Through this process, prompt engineering can be performed more efficiently.</p>
+    <p>Additionally, below is a simple GUI production code and example of created GUI. This code is written based on the tkinter API, and we plan to use this to allow ChatGPT to propose activities to user.</p>
+    <img class="img-fluid" src="img/post5/5.jpg" alt="Image Description">
+    <img class="img-fluid" src="img/post5/6.jpg" alt="Image Description">
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
