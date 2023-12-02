@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Explore our project - Social Robot for the Depressed and Lonely: Based on Emotional Analyzing and LLM" />
+    <meta name="author" content="C Li" />
+    <title>Social Robot's Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Social Robot's Robot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/robot-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Social Robot for the Depressed and Lonely</h1>
+                        <h2 class="subheading">Speech Model and Assembly</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">C, Li</a>
+                            on December 1, 2023
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Blog Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    
+                    <h2>Speech Emotion Models</h2>
+<p>
+    This is the second-to-last blog update, and this week's content revolves around the training of emotion models for speech and the overall assembly of the system. As mentioned at the beginning of the blog, our team aims to ensure a diverse range of emotional modalities based on the schedule. Currently, facial expressions and text have been completed. However, to achieve better results, we haven't abandoned training emotion models for speech and are still in progress. While it's highly likely that we can integrate speech into the final system, we cannot guarantee it.
+</p>
+
+<h2>Speech Emotion Models Architecture</h2>
+<img class="img-fluid" src="img/post6/01.png">
+<img class="img-fluid" src="img/post6/02.png">
+<p>
+    Due to the complex diversity of speech, this is a more challenging task. In speech emotion recognition, we transformed the task from audio to recognition based on structures like spectrogram and Mel spectrogram. Ultimately, we decided to use five models for iterative use. We switched the base model to a CNN architecture (initially using LSTM architecture showed less effective results in testing) to ensure a lightweight and efficient final model.
+</p>
+<img class="img-fluid" src="img/post6/1.png">
+<img class="img-fluid" src="img/post6/2.png">
+<img class="img-fluid" src="img/post6/3.png">
+<img class="img-fluid" src="img/post6/4.png">
+<img class="img-fluid" src="img/post6/5.png">
+
+<p>
+    As observed, different models handle different emotion tasks. The first three models address macro tasks, while the fourth model distinguishes between neutral and sad, and the fifth model distinguishes between happy and angry. The complexity of speech emotion recognition is handled through their collective invocation.
+</p>
+
+<p>
+   <b>The calling logic for each model is as follows:</b> 
+</p>
+<p>Firstly, the first emotion prediction of message (MSG) is carried out using model, and the emotion probability distribution is obtained. Then, depending on the prediction, branch into positive emotions or negative emotions. Within each branch, a different model is further used for secondary classification:
+<br><code>{Negative branch: Use model2 to determine disgust, fear, or sad.
+    Frontal branch: Use model3 to determine whether to be happy or neutral. }
+</code><br>
+    On the basis of the results of the secondary classification, if it is not happy or neutral, it will further use model5 to make a more granular distinction:
+<br><code>[For the negative emotion branch, judge whether it is angry or happy;
+    For the positive branch of emotion, determine whether it is sad or neutral. ]</code><br>
+    Through the combination of these layers of classification and multiple models, a concrete emotion label is finally determined and stored in the variable Final_pred.</p>
+</p>
+<p>
+    Here are the accuracies for each model:<br>
+    - Model 1 Accuracy: 0.8254688382148743<br>
+    - Model 2 Accuracy: 0.5941483378410339<br>
+    - Model 3 Accuracy: 0.896835446357727<br>
+    - Model 4 Accuracy: 0.8965666890144348<br>
+    - Model 5 Accuracy: 0.8703223466873169
+</p>
+
+<p>
+    However, the final result for the complete task, achieved through repeated invocation structures, is as follows:
+    <img class="img-fluid" src="img/post6/6.png">
+</p>
+
+<p>
+    From this, it's evident that the final result on the dataset surpasses any individual model, even approaching near-perfect accuracy in some tasks (rounded to the nearest percent), demonstrating the advantage of this reuse structure.
+</p>
+
+<h2>System Assembly</h2>
+<p>
+    To integrate existing facial recognition and text analysis models with the LLM section, we performed post-processing on the output. For expression recognition, we fixed the recognition of all expressions within 5 seconds and selected the most frequent result as the final label. Due to the difficulty of ensuring the recognition of any person's expression, especially in surprise and neutral results, we tied text and expression analysis detections and leaned more towards the text result.
+</p>
+
+<p>
+    Once a natural language emotion is obtained, it is input into the LLM section through this UI:
+    <img class="img-fluid" src="img/post6/7.jpg">
+</p>
+
+<p>
+    Finally, with the assistance of LLM, API calls are made and subsequent operations are initiated.
+</p>
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
