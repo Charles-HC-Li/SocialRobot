@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Explore our project - Social Robot for the Depressed and Lonely: Based on Emotional Analyzing and LLM" />
+    <meta name="author" content="C Li" />
+    <title>Social Robot's Blog</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Social Robot's Robot</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/robot-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Social Robot for the Depressed and Lonely</h1>
+                        <h2 class="subheading">Summary & Demo</h2>
+                        <span class="meta">
+                            Posted by
+                            <a href="#!">C, Li</a>
+                            on December 8, 2023
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Blog Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    
+
+<p>
+    We are happy to share that over the weekend after the last blog update, we achieved our goal of successfully integrating all modes into our system, congratulations to ourselves!
+</p>
+
+<h2>Self-Evaluation</h2>
+<p>In this project, we have successfully built a complete and functional social robot system with the following advantages:</p>
+<img class="img-fluid" src="img/post6/7.jpg">
+<ol>
+    <br>
+  <li><strong>Modular Design:</strong> We adopted a plug-and-play approach for all modules, providing the system with rich expandability and versatility. This means that each module can run independently or in combination, making the system easy to update and expand as a whole.</li>
+  
+  <li><strong>Upgradability:</strong> To quickly deploy the system, we chose models that are user-friendly and efficient in their respective domains, such as GPT3.5, BERT, VGG, etc. However, we also considered that users might want to replace their own models to adapt to specific audiences or use state-of-the-art models for superior performance. Therefore, we have reserved interfaces for users to replace models to meet different needs.</li>
+  
+  <li><strong>Accessibility:</strong> The system does not directly use multimodal models to handle mixed inputs. We recognize that our target users may not be able to type, speak, or display expressions. Instead, the modular design allows for various combinations, accommodating different user needs and abilities.</li>
+  
+  <li><strong>Intelligence:</strong> The system integrates a large language model (LLM) to perform modal blending and decision-making. Leveraging the capabilities of LLM enhances the system's potential usability, providing increased intelligence and adaptability.</li>
+</ol>
+
+<p>But at the same time, because the goal is to build a system, the project has lost some depth pursuit while ensuring the breadth and completeness as much as possible. Our final position is a complete and usable social robot system, but there are opportunities for further iterations.</p>
+
+<h2>DEMO</h2>
+<p></p>
+<p>For a demonstration of the final product, you can watch the following video on YouTube or on <a href="https://purdue0-my.sharepoint.com/:v:/r/personal/li4560_purdue_edu/Documents/%E9%99%84%E4%BB%B6/SocialBot.mp4?csf=1&web=1&e=KQTeDL" target="_blank">OneDrive</a>(More clearer).</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/V1zQjhkv0Wc?si=nwn1TOR2uyFjLaTf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ 
+<p>Our final system is command-line-based, utilizing various Python programs as outlined in the <a href="https://github.com/Charles-HC-Li/socialbot/blob/main/README.md" target="_blank">documentation</a> to perform specific functions. To facilitate demonstration, we conducted functional tests on the deployed web-based Large Language Model (LLM), such as ChatGPT. However, we have retained the functionality to call APIs as well.</p>
+
+
+<ol>
+    
+    <li><strong>Voice Module:</strong> The Voice Module initiates a recording sequence, capturing a precise five-second audio segment. Subsequent to this, analytical outcomes are acquired and meticulously stored within a designated file.</li>
+    <p>
+        <img class="img-fluid" src="img/post6/10.png">
+    </p>
+    <li><strong>Facial Expression Module:</strong> The Facial Expression Module dynamically identifies and records all expressions occurring within a five-second interval. The definitive expression label is determined by selecting the most frequently occurring expression, providing a nuanced representation. This result is then systematically archived in a dedicated file.</li>
+    <p>
+        <img class="img-fluid" src="img/post6/11.png">
+    </p>
+    <li><strong>Text Module:</strong> The Text Module introduces a structured UI, offering users an interactive platform for input. Real-time processing of input yields instantaneous results, delivering dynamic insights. Simultaneously, both the original text and the corresponding processed results are systematically archived in the system's repository.</li>
+    <p>
+        <img class="img-fluid" src="img/post6/9.png">
+    </p>
+    <li><strong>Prompt Post-processing Module:</strong> Post the completion of preceding modules, the "clear" program can be executed to reset the output for a pristine user experience. This module presents two distinct pathways:
+      <ul>
+        <li>Directly adopting a streamlined output as the definitive input for subsequent modules—a strategy ideal for systems deploying robust and reliable analysis models, including individualized model deployments.</li>
+        <li>The integration of the Large Language Model (LLM) becomes pivotal to counteract any limitations in the previously chosen models. The advanced output method encapsulates the idiosyncrasies of prior modules, utilizing prompt engineering techniques to provide affirmative cues to LLM (such as emphasizing potential pitfalls in other models) and supplementary information for enhanced judgment.</li>
+      </ul>
+    </li>
+    <p>
+        <img class="img-fluid" src="img/post6/12.png">
+    </p>
+    <li><strong>LLM Operation Module:</strong> Following the acquisition of analysis results, the system seamlessly transitions into a second phase of LLM iteration, prompting inquiries about available subsequent actions. Leveraging the assistant API's features, code generation ensues, determining the course of further actions based on personalized recommendations derived from LLM. The integration of text-to-speech technology and our meticulously designed UI serves as robust support for seamless deployment.</li>
+  </ol>
+  <p>
+    <img class="img-fluid" src="img/post6/13.png">
+</p>
+
+<h2>Discussion & Future Work</h2>
+<ol>
+    <li><strong>Establishment of User-Friendly UI:</strong> Presently, all operations are command-line-based. Introducing an aesthetically pleasing and user-friendly UI will significantly reduce the entry barrier for usage and deployment. Additionally, the UI design aims to enhance emotional support through thoughtful design elements.</li>
+    
+    <li><strong>Upgrade of Internal Base Models:</strong> To expedite system development and achieve relatively faster processing speeds and efficiency, we initially adopted models with good cost-effectiveness. However, with technological advancements, the emergence of more State of the Art (SOTA) models promises increased assistance and improved accuracy.</li>
+    
+    <li><strong>Fine-tuning or Alternative LLMs:</strong> With the proliferation of various Large Language Models (LLMs) in the market, each model exhibits relative advantages. Utilizing finely-tuned or vertically specialized LLMs in our specific domain can undoubtedly provide enhanced support.</li>
+    
+    <li><strong>Personalized Subsequent Operations:</strong> The current LLM operations section relies on suggestions generated by LLM, and the available categories may be somewhat limited. Exploring personalized subsequent operations might yield improved outcomes, tailored to specific requirements.</li>
+    
+    <li><strong>Introduction of Multi-Agent System LLM:</strong> Systems like AutoGen, featuring Multi-Agent LLM, have demonstrated remarkable potential. Incorporating such systems can offer more robust and stable support to our framework.</li>
+  </ol>
+  
+
+  <p>This project introduces a modular and extensible social robot system. The system is designed with modularity, allowing each component to be flexibly upgraded and combined. Additionally, it includes an interface for model replacement to adapt to diverse requirements. Recognizing user diversity, the system supports the processing of various modal combinations, not solely relying on multimodal inputs. The integration of a large language model enhances decision-making and understanding, elevating the system's level of intelligence.</p>
+
+  <p>Nevertheless, we acknowledge that utilizing updated models and larger-scale models can yield improved marginal utility. Introducing a user interface will further reduce entry barriers, a focus for our upcoming work. Additionally, the proposal of incorporating vertical Large Language Models (LLMs) suggests enhancing interpretability and enriching the system's capabilities. Overall, through modular and extensible design, considering accessibility and user diversity, and harnessing the power of language models, this system represents a new direction in social robot development.</p>
+  
+
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
